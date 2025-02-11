@@ -3,7 +3,6 @@ import { About, Features, Footer, Hero, Services } from "@/sections";
 import Nav from "@/components/Nav";
 import Cta from "@/sections/Cta";
 import Faq from "@/sections/Faq";
-import TeamMember from "@/sections/Team";
 import Team from "@/sections/Team";
 
 const Home = () => {

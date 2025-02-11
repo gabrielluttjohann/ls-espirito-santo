@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Cta = () => {
   return (
     <section className="relative z-10 overflow-hidden bg-gradient-to-r from-blue to-slate-600 py-20 px-8 my-10">
@@ -19,12 +21,12 @@ const Cta = () => {
           </div>
           <div className="w-full px-4 lg:w-1/2">
             <div className="text-center lg:text-right">
-              <a
-                className="font-semibold rounded-lg mx-auto inline-flex items-center justify-center bg-golden text-white font-bold py-4 px-9 hover:bg-opacity-90"
+              <Link
+                className=" rounded-lg mx-auto inline-flex items-center justify-center bg-golden text-white font-bold py-4 px-9 hover:bg-opacity-90"
                 href="/contato"
               >
                 Agende uma Consulta
-              </a>
+              </Link>
             </div>
           </div>
         </div>
