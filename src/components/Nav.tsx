@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import image from "../../public/image.png"
 
 
@@ -19,15 +20,15 @@ const Nav = () => {
   return (
     <div className="px-4 py-5 mx-auto container lg:px-8">
       <div className="relative flex items-center justify-between">
-        <a
+        <Link
           href="/"
           aria-label="Company"
           title="Company"
           className="inline-flex items-center"
         >
-      <img src={image.src} className="w-full h-20" alt="" />
+      <Image src={image.src} className="w-full h-20" alt="" />
          
-        </a>
+        </Link>
         <ul className="flex items-center max-md:hidden space-x-8 lg:flex">
           {navItems.map((item, index) => (
             <li key={index}>
@@ -41,14 +42,14 @@ const Nav = () => {
                   {item.label}
                 </Link>
               ) : (
-                <a
+                <Link
                   href={item.href}
                   aria-label={item.label}
                   title={item.label}
                   className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                 >
                   {item.label}
-                </a>
+                </Link>
               )}
             </li>
           ))}
@@ -92,7 +93,7 @@ const Nav = () => {
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <a
+                    <Link
                       href="/"
                       aria-label="Company"
                       title="Company"
@@ -116,7 +117,7 @@ const Nav = () => {
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         Company
                       </span>
-                    </a>
+                    </Link>
                   </div>
                   <div>
                     <button
@@ -148,26 +149,26 @@ const Nav = () => {
                             {item.label}
                           </Link>
                         ) : (
-                          <a
+                          <Link
                             href={item.href}
                             aria-label={item.label}
                             title={item.label}
                             className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                           >
                             {item.label}
-                          </a>
+                          </Link>
                         )}
                       </li>
                     ))}
                     <li>
-                      <a
+                      <Link
                         href="/"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                         aria-label="Sign up"
                         title="Sign up"
                       >
                         Sign up
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>

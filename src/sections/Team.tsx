@@ -3,7 +3,7 @@ import team2 from "../../public/mauricio.png";
 import team3 from "../../public/aline.png";
 import team4 from "../../public/maysa.png";
 import team5 from "../../public/tomas.png";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface TeamMember {
   name: string;
@@ -67,7 +67,7 @@ const Team = () => {
       <div className="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-3 max-w-7xl">
         {teamMembers.map((member, index) => (
           <div key={index}>
-            <img
+            <Image
               className="object-cover w-24 h-24 rounded-full shadow"
               src={member.imageUrl.src}
               alt={member.name}

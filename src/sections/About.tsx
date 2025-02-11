@@ -1,4 +1,3 @@
-import image from "../../public/image.png";
 import lawyerWriting from "../../public/lawyer-writing.jpg";
 
 const About = () => {
