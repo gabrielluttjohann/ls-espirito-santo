@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import {  Merriweather } from "next/font/google";
+import { Merriweather } from "next/font/google";
 import "@/styles/globals.css";
+import WhatsappButton from "@/components/WhatsappButton";
+import Header from "@/sections/Header";
+import { Footer } from "@/sections";
 
 const merriweather = Merriweather({
   variable: "--font-merriweather",
@@ -19,8 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body className={`${merriweather.variable}  antialiased`}>{children}</body>
+    <html lang="pt-br" className="scroll-smooth">
+      <body className={`${merriweather.variable}  antialiased`}>
+        <Header />
+        {children}
+        <WhatsappButton />
+        <Footer />
+      </body>
     </html>
   );
 }

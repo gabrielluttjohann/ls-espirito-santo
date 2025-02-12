@@ -1,6 +1,9 @@
+import CustomButton from "@/components/CustomButton";
+import { contactInfo } from "@/data";
+
 const Features = () => {
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div id="differentials" className="scroll-mt-28 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col lg:flex-row">
         <div className="max-w-xl pr-16 mx-auto mb-10">
           <h5 className="mb-6 text-3xl font-bold leading-none">
@@ -16,12 +19,7 @@ const Features = () => {
             suas necessidades e objetivos.
           </p>
           <div className="flex items-center">
-            <button
-              type="submit"
-              className="bg-blue inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-            >
-              Fale Conosco{" "}
-            </button>
+           <CustomButton link href={contactInfo.contactNumber} label="Fale com um advogado"/>
           </div>
         </div>
         <div className="grid gap-5 row-gap-5 sm:grid-cols-2">

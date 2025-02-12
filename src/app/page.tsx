@@ -1,6 +1,6 @@
 import React from "react";
 import { About, Features, Footer, Hero, Services } from "@/sections";
-import Nav from "@/components/Nav";
+import Header from "@/sections/Header";
 import Cta from "@/sections/Cta";
 import Faq from "@/sections/Faq";
 import Team from "@/sections/Team";
@@ -8,9 +8,6 @@ import Team from "@/sections/Team";
 const Home = () => {
   return (
     <main className="relative">
-      <section className="">
-        <Nav />
-      </section>
       <section>
         <Hero />
       </section>
@@ -29,12 +26,8 @@ const Home = () => {
       <section>
         <Team />
       </section>
-
       <section>
         <Faq />
-      </section>
-      <section>
-        <Footer />
       </section>
     </main>
   );

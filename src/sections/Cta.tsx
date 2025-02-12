@@ -1,8 +1,10 @@
+import CustomButton from "@/components/CustomButton";
+import { contactInfo } from "@/data";
 import Link from "next/link";
 
 const Cta = () => {
   return (
-    <section className="relative z-10 overflow-hidden bg-gradient-to-r from-blue to-slate-600 py-20 px-8 my-10">
+    <section className="scroll-mt-28 relative z-10 overflow-hidden bg-gradient-to-r from-blue to-slate-600 py-20 px-8 my-10">
       <div className="container max-w-7xl">
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-4 lg:w-1/2">
@@ -12,21 +14,21 @@ const Cta = () => {
                   Proteja seus direitos com assessoria especializada
                 </h1>
                 <p className="w-full text-base font-medium leading-relaxed sm:text-lg sm:leading-relaxed text-gray-400">
-                  Nossa equipe de advogados está pronta para oferecer suporte
-                  jurídico eficaz e personalizado. Agende uma consulta e tenha a
-                  orientação que você precisa.
+                  Venha ter uma experiência diferenciada de um escritório de
+                  advocacia personalizado para resolver o seu problema com
+                  excelência. Clique em agende uma consulta e surpreenda-se.
                 </p>
               </div>
             </div>
           </div>
           <div className="w-full px-4 lg:w-1/2">
             <div className="text-center lg:text-right">
-              <Link
-                className=" rounded-lg mx-auto inline-flex items-center justify-center bg-golden text-white font-bold py-4 px-9 hover:bg-opacity-90"
-                href="/contato"
-              >
-                Agende uma Consulta
-              </Link>
+              <CustomButton
+                link
+                secondary
+                href={contactInfo.whatsappLink}
+                label="Fale com um advogado"
+              />
             </div>
           </div>
         </div>

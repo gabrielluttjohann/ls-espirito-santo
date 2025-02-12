@@ -1,8 +1,11 @@
+import CustomButton from "@/components/CustomButton";
 import vitoriaImg from "../../public/vitoria.png";
+import { contactInfo } from "@/data";
+import { FaRegHandshake, FaGavel, FaBriefcase } from "react-icons/fa"; // Importando os ícones
 
 const Hero = () => {
   return (
-    <div className="mb-16">
+    <div className="mb-16 ">
       <div
         className="relative bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${vitoriaImg.src})` }}
@@ -22,17 +25,18 @@ const Hero = () => {
               resultado.
             </h2>
             <p className="text-base text-gray-200 md:text-lg">
-              Consultoria especializada para garantir a segurança jurídica do
-              seu negócio e resolver conflitos de maneira eficiente no Espírito Santo.
+              Advocacia especializada nas mais diversas áreas do Direito,
+              proporcionando maior segurança jurídica e solução de conflitos de
+              maneira ágil e eficiente.
             </p>
           </div>
           <div className="flex items-center sm:justify-center">
-            <button
-              type="submit"
-              className="bg-golden text-white inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-            >
-              Fale com um advogado
-            </button>
+            <CustomButton
+              link
+              secondary
+              label="Fale com um advogado"
+              href={contactInfo.whatsappLink}
+            />
           </div>
         </div>
       </div>
@@ -41,19 +45,7 @@ const Hero = () => {
         <div className="relative grid mx-auto overflow-hidden bg-white divide-y rounded shadow sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
           <div className="inline-block p-8 text-center">
             <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
-              <svg
-                className="w-10 h-10 text-deep-purple-accent-400"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <path
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  d="M10 10h32v32H10z"
-                />
-              </svg>
+              <FaBriefcase className="w-10 h-10 text-deep-purple-accent-400" />
             </div>
             <p className="font-bold tracking-wide text-gray-800">
               Consultoria Jurídica
@@ -64,19 +56,7 @@ const Hero = () => {
           </div>
           <div className="inline-block p-8 text-center">
             <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
-              <svg
-                className="w-10 h-10 text-deep-purple-accent-400"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <path
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  d="M14 14h24v24H14z"
-                />
-              </svg>
+              <FaGavel className="w-10 h-10 text-deep-purple-accent-400" />
             </div>
             <p className="font-bold tracking-wide text-gray-800">
               Litígios e Defesa
@@ -87,19 +67,7 @@ const Hero = () => {
           </div>
           <div className="inline-block p-8 text-center">
             <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
-              <svg
-                className="w-10 h-10 text-deep-purple-accent-400"
-                stroke="currentColor"
-                viewBox="0 0 52 52"
-              >
-                <path
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                  d="M5 5h42v42H5z"
-                />
-              </svg>
+              <FaRegHandshake className="w-10 h-10 text-deep-purple-accent-400" />
             </div>
             <p className="font-bold tracking-wide text-gray-800">
               Acordos e Mediação

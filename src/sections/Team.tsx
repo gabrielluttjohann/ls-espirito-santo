@@ -1,87 +1,52 @@
-import team1 from "../../public/fernanda.png";
-import team2 from "../../public/mauricio.png";
-import team3 from "../../public/aline.png";
-import team4 from "../../public/maysa.png";
-import team5 from "../../public/tomas.png";
-import Image, { StaticImageData } from "next/image";
-
-interface TeamMember {
-  name: string;
-  role: string;
-  description: string;
-  imageUrl: StaticImageData;
-}
-
-const teamMembers: TeamMember[] = [
-  {
-    name: "Dra. Fernanda Lima",
-    role: "OAB/RS 72.525",
-    description:
-      "Graduada em Direito pela Fundação Universidade Federal do Rio Grande (FURG). Pós-graduada em Direito do Trabalho e Processo do Trabalho pela Escola Superior Verbo Jurídico. Pós-graduada em Advocacia Previdenciária pela Escola Brasileira de Direito (EBRADI). Possui mais de 15 anos de experiência na área trabalhista.",
-    imageUrl: team1,
-  },
-  {
-    name: "Dr. Mauricio Sant'Anna",
-    role: "OAB/RS 127.675",
-    description:
-      "Advogado graduado pela UNISINOS, com uma trajetória profissional notável. Trabalhou como auxiliar de diversos juízes por 15 anos, com foco nas áreas cíveis e criminais. Possui certificações nas áreas de Direito Criminal, Execução da Pena, Direito Previdenciário, Societário, Empresarial, Família, Sucessões e Direito Administrativo.",
-    imageUrl: team2,
-  },
-  {
-    name: "Dra. Aline Silva",
-    role: "OAB/RS 111.470",
-    description:
-      "Graduada em Direito pela Universidade FEEVALE, com pós-graduação em Advocacia Corporativa pela FMP e Direito do Trabalho pela Verbo Jurídico. Possui diversas certificações em Direito de Família, Trânsito e Direito Civil.",
-    imageUrl: team3,
-  },
-  {
-    name: "Dra. Maysa Ramos",
-    role: "OAB/ES 41818",
-    description:
-      "Advogada responsável pela filial localizada na cidade de Vitória, Espírito Santo.",
-    imageUrl: team4,
-  },
-  {
-    name: "Dr. Tomas Tonin",
-    role: "OAB/RS 121.356",
-    description:
-      "Advogado atuante nos estados do Rio Grande do Sul, Santa Catarina e Paraná.",
-    imageUrl: team5,
-  },
-];
+import Image from "next/image";
+import { contactInfo, teamMembers } from "@/data";
+import Link from "next/link";
+import CustomButton from "@/components/CustomButton";
 
 const Team = () => {
   return (
-    <div className="px-4 py-16 mx-auto lg:py-20">
-      {/* Título e descrição da seção */}
+    <div
+      id="team"
+      className="scroll-mt-28 px-6 py-16 mx-auto max-w-7xl lg:py-20 flex flex-col items-center justify-center"
+    >
       <div className="text-center flex flex-col justify-center items-center mb-14">
-        <h2 className="text-3xl font-bold text-gray-900">
+        <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
           Conheça nossa equipe
         </h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-5xl ">
+        <p className="mt-4 text-lg text-gray-600 max-w-4xl text-center">
           Nossa equipe é formada por profissionais altamente qualificados,
           comprometidos com a excelência e o sucesso dos nossos clientes.
         </p>
       </div>
 
-      <div className="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-3 max-w-7xl">
+      <div className="grid gap-10 mx-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {teamMembers.map((member, index) => (
-          <div key={index}>
+          <div key={index} className="flex flex-col items-center text-center">
             <Image
-              className="object-cover w-24 h-24 rounded-full shadow"
-              src={member.imageUrl.src}
+              width={120}
+              height={120}
+              className="object-cover w-28 h-28 rounded-full shadow-lg"
+              src={member.imageUrl}
               alt={member.name}
             />
-            <div className="flex flex-col justify-center mt-2">
-              <p className="text-lg font-bold">{member.name}</p>
-              <p className="mb-4 text-xs text-gray-800">{member.role}</p>
-              <p className="text-sm tracking-wide text-gray-800">
+            <div className="mt-4">
+              <p className="text-lg font-semibold text-gray-900">
+                {member.name}
+              </p>
+              <p className="text-sm text-gray-700 font-medium">{member.role}</p>
+              <p className="mt-2 text-sm text-gray-600 px-4">
                 {member.description}
               </p>
             </div>
           </div>
         ))}
       </div>
+      <CustomButton
+        link
+        href={contactInfo.whatsappLink}
+        label="Fale com um advogado"
+        customStyle="mt-12"
+      />
     </div>
   );
 };

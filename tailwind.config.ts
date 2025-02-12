@@ -20,7 +20,9 @@ export default {
       },
       colors: {
         blue: "#0B2239",
+        lightBlue: "#0F3151",
         golden: "#B68C5A",
+        lightGolden: "#C19866",
         beige: "#FFF9F2",
       },
     },
