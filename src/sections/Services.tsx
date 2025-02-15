@@ -1,6 +1,11 @@
 "use client";
 import { useState } from "react";
 
+// Título e descrição da seção
+const sectionTitle = "Nossos Serviços";
+const sectionDescription =
+  "Confira as áreas do direito em que atuamos e veja como podemos ajudá-lo com assessoria jurídica especializada.";
+
 type CategoryKeys =
   | "Assessoria Empresarial"
   | "Família e Sucessões"
@@ -48,39 +53,39 @@ const ServicesTabs = () => {
   );
 
   return (
-    <div className="responsive-container mb-8">
-      {/* Título e Descrição */}
-      <div className="flex flex-col lg:flex-row items-start justify-between mb-14">
-        <h2 className="text-5xl font-bold text-gray-900 py-3 md:w-1/2">Nossos Serviços</h2>
-        <p className="text-gray-600 responsive-text">
-          Conheça as áreas de atuação da nossa equipe de advogados
-          especializados, prontos para oferecer soluções jurídicas completas e
-          personalizadas.
-        </p>
-      </div>
+    <section id="services" className="bg-gray-100 scroll-my-28">
+      <div className="responsive-container section-spacing ">
+        {/* Título e descrição */}
+        <div className="responsive-flex-center max-md:text-center responsive-mb">
+          <h2 className="responsive-h2 w-full ">{sectionTitle}</h2>
+          <p className="text-gray-600 mt-2">{sectionDescription}</p>
+        </div>
 
-      {/* Tabs */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 border-b pb-2">
-        {Object.keys(categories).map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveTab(category as CategoryKeys)}
-            className={` py-4 responsive-text border transition-all duration-300 whitespace-nowrap hover:bg-wineLight hover:text-white ${
-              activeTab === category
-                ? "border-black bg-wine text-charcoalGray text-white font-semibold"
-                : "border-gray-400 text-gray-500 hover:text-gray-700"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+        {/* Tabs */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 border-b pb-2">
+          {Object.keys(categories).map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveTab(category as CategoryKeys)}
+              className={` py-4 responsive-text border transition-all duration-300 whitespace-nowrap hover:bg-wineLight hover:text-white ${
+                activeTab === category
+                  ? "border-black bg-wine text-charcoalGray text-white font-semibold"
+                  : "border-gray-400 text-gray-500 hover:text-gray-700"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
-      {/* Content */}
-      <div className="mt-6 p-5 bg-white border rounded shadow-sm">
-        <p className="text-gray-900 responsive-text">{categories[activeTab]}</p>
+        {/* Content */}
+        <div className="mt-6 p-5 bg-white border rounded shadow-sm">
+          <p className="text-gray-900 responsive-text">
+            {categories[activeTab]}
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

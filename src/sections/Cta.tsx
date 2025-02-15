@@ -1,17 +1,18 @@
+import { contactInfo } from "@/data";
 import Link from "next/link";
 
 const Cta = () => {
   return (
-    <section className="scroll-mt-28 relative z-10 overflow-hidden py-32 my-20 bg-gradient-to-r from-wine via-wine to-red-600">
+    <section className="relative z-10 section-spacing gradient-bg overflow-hidden  scroll-mt-28 ">
       <div className="responsive-container">
         <div className="-mx-4 flex flex-wrap items-center">
           <div className="w-full px-4 lg:w-1/2">
-            <div className="text-center lg:text-left">
+            <div className="text-center md:text-left">
               <div className="mb-10 lg:mb-0">
-                <h1 className="mt-0 mb-3 text-3xl font-bold leading-tight sm:text-4xl sm:leading-tight md:text-[40px] md:leading-tight text-white">
+                <h2 className="responsive-h2 responsive-mb text-white">
                   Proteja seus direitos com assessoria especializada
-                </h1>
-                <p className="w-full text-base  leading-relaxed sm:text-lg sm:leading-relaxed text-slate-300">
+                </h2>
+                <p className="w-full text-base  leading-relaxed sm:text-lg sm:leading-relaxed text-slate-200">
                   Venha ter uma experiência diferenciada de um escritório de
                   advocacia personalizado para resolver o seu problema com
                   excelência. Clique em agende uma consulta e surpreenda-se.
@@ -20,8 +21,13 @@ const Cta = () => {
             </div>
           </div>
           <div className="w-full lg:w-1/2">
-            <div className="text-center lg:text-right ">
-             <Link href="" className="bg-red-400 py-5 px-7 font-bold text-white rounded-full">Fale com um Advogado</Link>
+            <div className="text-center md:text-left lg:text-right ">
+              <Link
+                href={contactInfo.whatsappLink}
+                className="btn bg-red-400 text-white"
+              >
+                Fale com um Advogado
+              </Link>
             </div>
           </div>
         </div>

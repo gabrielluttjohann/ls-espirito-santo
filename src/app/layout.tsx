@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className=" relative scroll-smooth">
-      <body className={`${montserrat.variable} ${ebGaramond.variable}  antialiased`}>
+      <body className={`${montserrat.variable} ${ebGaramond.variable} responsive-body  antialiased`}>
         <Header />
         {children}
         <WhatsappButton />

@@ -1,22 +1,5 @@
 import { StaticImageData } from "next/image";
 
-import {
-  FaBalanceScale,
-  FaGavel,
-  FaUserShield,
-  FaHandHoldingUsd,
-  FaBuilding,
-  FaLandmark,
-  FaShieldAlt,
-  FaUsers,
-  FaFileContract,
-  FaBriefcase,
-  FaHospital,
-  FaHardHat,
-  FaUniversity,
-  FaLock,
-} from "react-icons/fa";
-
 import logoBlack from "../../public/logo-black.png";
 import logoWhite from "../../public/logo-white.png";
 
@@ -53,7 +36,7 @@ type ContactInfoProps = {
 };
 
 export const contactInfo: ContactInfoProps = {
-  whatsappLink: "https://wa.link/mr9k1n",
+  whatsappLink: "https://wa.link/875dpa",
   contactNumber: "+55 (27) 99626-7475",
   email: "contato@lesadv.com.br",
   mapAddress: "https://maps.app.goo.gl/jpcJ3kydB9ZBGmik6",
@@ -98,56 +81,7 @@ export const navItems: NavItemsProps[] = [
   },
 ];
 
-/**
- * ======================================
- * SERVICES
- * ======================================
- */
-type Service = {
-  name: string;
-  icon: React.ReactNode;
-};
 
-export const services: Service[] = [
-  {
-    name: "Assessoria Empresarial",
-    icon: <FaBriefcase className="text-blue" />,
-  },
-  { name: "Direito Civil", icon: <FaGavel className="text-blue" /> },
-  { name: "Direito da Família", icon: <FaUsers className="text-blue" /> },
-  {
-    name: "Sucessões e Inventários",
-    icon: <FaFileContract className="text-blue" />,
-  },
-  {
-    name: "Direito das Obrigações e Contratos",
-    icon: <FaHandHoldingUsd className="text-blue" />,
-  },
-  {
-    name: "Direito Bancário",
-    icon: <FaBalanceScale className="text-blue" />,
-  },
-  { name: "Direito Imobiliário", icon: <FaBuilding className="text-blue" /> },
-  {
-    name: "Responsabilidade Civil",
-    icon: <FaShieldAlt className="text-blue" />,
-  },
-  {
-    name: "Direito do Consumidor",
-    icon: <FaUserShield className="text-blue" />,
-  },
-  {
-    name: "Direito Administrativo",
-    icon: <FaLandmark className="text-blue" />,
-  },
-  { name: "Direito da Saúde", icon: <FaHospital className="text-blue" /> },
-  { name: "Direito do Trabalho", icon: <FaHardHat className="text-blue" /> },
-  {
-    name: "Direito Previdenciário",
-    icon: <FaUniversity className="text-blue" />,
-  },
-  { name: "Direito Penal", icon: <FaLock className="text-blue" /> },
-];
 
 /**
  * ======================================

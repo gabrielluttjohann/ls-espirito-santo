@@ -24,8 +24,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className=" bg-gradient-to-r from-wine via-wine to-wineLight">
-      <div className="px-4 pt-16 mx-auto container md:px-24 lg:px-8">
+    <footer className="section-spacing bg-gradient-to-r from-wine via-wine to-wineLight">
+      <div className="responsive-container">
         <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 ">
             <Link
@@ -49,8 +49,8 @@ const Footer = () => {
           <div className="space-y-2 text-sm text-white">
             <p className="text-base font-bold">Contato</p>
             {contactDetails.map((item, index) => (
-              <p key={index}>
-                {item.label}:{" "}
+              <p  key={index}>
+                <span className="font-bold">{item.label}:</span>{" "}
                 <Link
                   href={item.href}
                   rel="noopener noreferrer"

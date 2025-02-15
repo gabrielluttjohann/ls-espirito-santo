@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { logo, navItems } from "@/data";
+import { contactInfo, logo, navItems } from "@/data";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <header className="bg-white sticky top-0 z-50 shadow-md">
-      <div className="px-4 py-2 mx-auto container lg:px-8">
+      <div className="py-2 responsive-container">
         <div className="flex items-center justify-between">
           <Link
             href="/"
@@ -78,7 +78,7 @@ const Header = () => {
                   href={item.href}
                   aria-label={item.label}
                   title={item.label}
-                  className=" tracking-wide text-gray-700 transition-colors duration-200"
+                  className="text-base"
                 >
                   {item.label}
                 </Link>
@@ -86,8 +86,8 @@ const Header = () => {
             ))}
             <li>
               <Link
-                href=""
-                className="flex font-bold items-center gap-2 bg-gradient-to-r from-wine to-wineLight py-3 px-7 rounded-full text-white"
+                href={contactInfo.whatsappLink}
+                className="btn text-white gradient-bg py-3"
               >
                 <span>Fale conosco</span>
               </Link>
