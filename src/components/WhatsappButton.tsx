@@ -9,7 +9,7 @@ const WhatsappButton = () => {
   return (
     <section className="fixed z-50 bottom-7 right-7">
       <Link href={contactInfo.whatsappLink}>
-        <Image width={80} height={80} src={whatsappLogo} alt="Botão do WhatsApp" />
+        <Image width={50} height={50} src={whatsappLogo}  alt="Botão do WhatsApp" />
       </Link>
     </section>
   );

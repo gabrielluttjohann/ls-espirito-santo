@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { contactInfo, teamMembers } from "@/data";
-import CustomButton from "@/components/CustomButton";
+import { teamMembers } from "@/data";
+
 
 const Team = () => {
   return (

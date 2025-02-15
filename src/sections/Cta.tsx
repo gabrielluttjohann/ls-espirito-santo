@@ -1,5 +1,3 @@
-import CustomButton from "@/components/CustomButton";
-import { contactInfo } from "@/data";
 import Link from "next/link";
 
 const Cta = () => {

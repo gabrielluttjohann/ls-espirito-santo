@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { faqItems } from "@/data";
-import CustomButton from "@/components/CustomButton";
 
 interface ItemProps {
   question: string;
