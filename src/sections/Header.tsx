@@ -2,8 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { contactInfo, logo, navItems } from "@/data";
-import CustomButton from "@/components/CustomButton";
+import { logo, navItems } from "@/data";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,7 +31,7 @@ const Header = () => {
 
   return (
     <header className="bg-white sticky top-0 z-50 shadow-md">
-      <div className="px-4 py-5 mx-auto container lg:px-8">
+      <div className="px-4 py-2 mx-auto container lg:px-8">
         <div className="flex items-center justify-between">
           <Link
             href="/"
@@ -79,18 +78,19 @@ const Header = () => {
                   href={item.href}
                   aria-label={item.label}
                   title={item.label}
-                  className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 hover:text-golden"
+                  className=" tracking-wide text-gray-700 transition-colors duration-200"
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
             <li>
-              <CustomButton
-                link
-                label="Fale conosco"
-                href={contactInfo.whatsappLink}
-              />
+              <Link
+                href=""
+                className="flex font-bold items-center gap-2 bg-gradient-to-r from-wine to-wineLight py-3 px-7 rounded-full text-white"
+              >
+                <span>Fale conosco</span>
+              </Link>
             </li>
           </ul>
         </div>
@@ -106,13 +106,12 @@ const Header = () => {
                     aria-label={item.label}
                     title={item.label}
                     className="font-medium text-gray-700 hover:text-golden block"
-                    onClick={closeMobileMenu} // Fecha o menu ao clicar no link
+                    onClick={closeMobileMenu}
                   >
                     {item.label}
                   </Link>
                 </li>
               ))}
-            
             </ul>
           </div>
         )}

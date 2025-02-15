@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .responsive-container {
+    @apply container mx-auto px-4 md:px-6 lg:px-8 xl:px-10;
+  }
+}
+
+@layer components {
+  .responsive-text {
+    @apply text-sm md:text-base lg:text-lg text-slate-300;
+  }
+}
+body {
+  font-family: var(--font-montserrat);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-eb-garamond);
+}

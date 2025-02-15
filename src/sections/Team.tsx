@@ -6,15 +6,16 @@ const Team = () => {
   return (
     <div
       id="team"
-      className="scroll-mt-28 px-6 py-16 mx-auto max-w-7xl lg:py-20 flex flex-col items-center justify-center"
+      className="scroll-mt-28 responsive-container py-16  lg:py-20 flex flex-col "
     >
-      <div className="text-center flex flex-col justify-center items-center mb-14">
-        <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-          Conheça nossa equipe
+      <div className="flex flex-col lg:flex-row justify-between items-center mb-14">
+        <h2 className="my-4 text-3xl font-bold text-gray-900 sm:text-4xl">
+          Conheça Nossa Equipe de Especialistas
         </h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-4xl text-center">
-          Nossa equipe é formada por profissionais altamente qualificados,
-          comprometidos com a excelência e o sucesso dos nossos clientes.
+        <p className=" text-gray-600 max-w-4xl text-justify ">
+          Formada por profissionais altamente qualificados e dedicados, nossa
+          equipe está comprometida em oferecer soluções de excelência para
+          garantir o sucesso e a satisfação de nossos clientes.
         </p>
       </div>
 
@@ -32,20 +33,16 @@ const Team = () => {
               <p className="text-lg font-semibold text-gray-900">
                 {member.name}
               </p>
-              <p className="text-sm text-gray-700 font-medium">{member.role}</p>
-              <p className="mt-2 text-sm text-gray-600 px-4">
+              <p className="text-sm text-gray-700 font-medium ">
+                {member.role}
+              </p>
+              <p className="mt-2 text-sm text-gray-600 px-4 text-justify">
                 {member.description}
               </p>
             </div>
           </div>
         ))}
       </div>
-      <CustomButton
-        link
-        href={contactInfo.whatsappLink}
-        label="Fale com um advogado"
-        customStyle="mt-12"
-      />
     </div>
   );
 };

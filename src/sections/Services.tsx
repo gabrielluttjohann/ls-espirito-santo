@@ -1,49 +1,87 @@
-import { contactInfo, services } from "@/data";
-import CustomButton from "@/components/CustomButton";
+"use client";
+import { useState } from "react";
 
-const Services = () => {
+type CategoryKeys =
+  | "Assessoria Empresarial"
+  | "Família e Sucessões"
+  | "Obrigações e Contratos"
+  | "Direito Bancário"
+  | "Direito Imobiliário"
+  | "Responsabilidade Civil"
+  | "Direito do Consumidor"
+  | "Direito Administrativo"
+  | "Direito da Saúde"
+  | "Direito do Trabalho"
+  | "Direito Previdenciário"
+  | "Direito Penal";
+
+const categories: Record<CategoryKeys, string> = {
+  "Assessoria Empresarial":
+    "Atuação estratégica para empresas em diversos setores, auxiliando na gestão jurídica, contratos, conformidade regulatória e prevenção de litígios.",
+  "Família e Sucessões":
+    "Abrange questões como divórcios, guarda de filhos, pensão alimentícia, regulamentação de visitas, partilhas de bens, testamentos e planejamento sucessório, assegurando a melhor organização patrimonial para herdeiros e sucessores.",
+  "Obrigações e Contratos":
+    "Elaboração e revisão de contratos, além da assessoria em disputas contratuais e cumprimento de obrigações legais e comerciais.",
+  "Direito Bancário":
+    "Defesa de direitos em contratos bancários, revisão de juros abusivos, cobranças indevidas e questões relacionadas ao sistema financeiro.",
+  "Direito Imobiliário":
+    "Atuação em compra, venda e locação de imóveis, regularização fundiária, usucapião e litígios relacionados a bens imobiliários.",
+  "Responsabilidade Civil":
+    "Assessoria em ações indenizatórias por danos morais e materiais, erros médicos, acidentes de trânsito e outras situações de prejuízo causado a terceiros.",
+  "Direito do Consumidor":
+    "Defesa dos direitos dos consumidores em compras de produtos e serviços, ações por publicidade enganosa, práticas abusivas e cláusulas contratuais ilegais.",
+  "Direito Administrativo":
+    "Atuação em processos administrativos, licitações, contratos públicos e defesa de servidores e empresas contra penalidades aplicadas por órgãos públicos.",
+  "Direito da Saúde":
+    "Assessoria em questões envolvendo planos de saúde, fornecimento de medicamentos, erro médico e ações contra o Estado para garantia de tratamentos.",
+  "Direito do Trabalho":
+    "Atuação em processos trabalhistas, defesa de empregadores e empregados, rescisões contratuais, direitos trabalhistas e negociações coletivas.",
+  "Direito Previdenciário":
+    "Acompanhamento de aposentadorias, benefícios do INSS, revisões de cálculos previdenciários e concessão de auxílios e pensões.",
+  "Direito Penal":
+    "Atuação na defesa e acusação em crimes contra a pessoa, patrimônio, administração pública, além de acompanhamento de inquéritos e processos criminais.",
+};
+
+const ServicesTabs = () => {
+  const [activeTab, setActiveTab] = useState<CategoryKeys>(
+    "Assessoria Empresarial"
+  );
+
   return (
-    <div
-      id="services"
-      className="scroll-mt-28 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
-    >
-      <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-        <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-          <span className="relative inline-block">
-            <span className="relative">Áreas de Atuação</span>
-          </span>
-        </h2>
-        <p className="text-base text-gray-700 md:text-lg">
-          Atendemos diversas áreas do Direito para oferecer suporte jurídico
-          especializado e personalizado.
+    <div className="responsive-container mb-8">
+      {/* Título e Descrição */}
+      <div className="flex flex-col lg:flex-row items-start justify-between mb-14">
+        <h2 className="text-5xl font-bold text-gray-900 py-3 md:w-1/2">Nossos Serviços</h2>
+        <p className="text-gray-600 responsive-text">
+          Conheça as áreas de atuação da nossa equipe de advogados
+          especializados, prontos para oferecer soluções jurídicas completas e
+          personalizadas.
         </p>
       </div>
-      <div className="grid gap-5 mb-8 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2"
+
+      {/* Tabs */}
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 border-b pb-2">
+        {Object.keys(categories).map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveTab(category as CategoryKeys)}
+            className={` py-4 responsive-text border transition-all duration-300 whitespace-nowrap hover:bg-wineLight hover:text-white ${
+              activeTab === category
+                ? "border-black bg-wine text-charcoalGray text-white font-semibold"
+                : "border-gray-400 text-gray-500 hover:text-gray-700"
+            }`}
           >
-            <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-slate-50 text-deep-purple-accent-400 text-2xl">
-              {service.icon}
-            </div>
-            <h6 className="mb-2 font-semibold leading-5">{service.name}</h6>
-            <p className="text-sm text-gray-900">
-              Entre em contato para saber mais sobre como podemos ajudar nessa
-              área do Direito.
-            </p>
-          </div>
+            {category}
+          </button>
         ))}
       </div>
-      <div className="text-center">
-        <CustomButton
-          link
-          href={contactInfo.whatsappLink}
-          label="Fale com um advogado"
-        />
+
+      {/* Content */}
+      <div className="mt-6 p-5 bg-white border rounded shadow-sm">
+        <p className="text-gray-900 responsive-text">{categories[activeTab]}</p>
       </div>
     </div>
   );
 };
 
-export default Services;
+export default ServicesTabs;

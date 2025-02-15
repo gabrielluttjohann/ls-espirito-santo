@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Merriweather } from "next/font/google";
+import {EB_Garamond, Montserrat } from "next/font/google"; 
 import "@/styles/globals.css";
+
+
 import WhatsappButton from "@/components/WhatsappButton";
 import Header from "@/sections/Header";
 import { Footer } from "@/sections";
 
-const merriweather = Merriweather({
-  variable: "--font-merriweather",
+const ebGaramond = EB_Garamond({
+  variable: "--font-eb-garamond",
   subsets: ["latin"],
-  weight: ["300", "400", "700"], // Include multiple weights if needed
 });
+
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className="scroll-smooth">
-      <body className={`${merriweather.variable}  antialiased`}>
+    <html lang="pt-br" className=" relative scroll-smooth">
+      <body className={`${montserrat.variable} ${ebGaramond.variable}  antialiased`}>
         <Header />
         {children}
         <WhatsappButton />

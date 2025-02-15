@@ -1,84 +1,88 @@
-import CustomButton from "@/components/CustomButton";
-import vitoriaImg from "../../public/vitoria.png";
-import { contactInfo } from "@/data";
-import { FaRegHandshake, FaGavel, FaBriefcase } from "react-icons/fa"; // Importando os ícones
+import Link from "next/link";
+import { FaStar } from "react-icons/fa";
+import heroImage from "../../public/lawyer.png";
+import heroBg from "../../public/wood.jpg";
 
 const Hero = () => {
   return (
-    <div className="mb-16 ">
-      <div
-        className="relative bg-cover bg-no-repeat"
-        style={{ backgroundImage: `url(${vitoriaImg.src})` }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-blue opacity-60"></div>
+    <section
+      className="relative bg-wine pt-8"
+      style={{ backgroundImage: `url(${heroBg.src})` }}
+    >
+      {/* Fundo da imagem */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
+      </div>
 
-        <div className="relative z-10 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-          <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+      {/* Right and Left content wrapper */}
+      <div className="relative z-20 responsive-container flex flex-col md:flex-row items-center justify-center gap-6 w-full">
+        {/* Right Content */}
+        <div className="my-8 w-full md:w-1/2 ">
+          <h2 className="text-xl">
+            <span className="text-slate-300">Seja bem vindo à</span>{" "}
+            <span className="text-white font-bold">LS Advocacia</span>
+          </h2>
+
+          <h1 className="my-4 md:my-8 lg:my-10 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tighter text-white">
+            Soluções jurídicas personalizadas para garantir o melhor resultado.{" "}
+          </h1>
+
+          <p className="text-sm md:text-md lg:text-lg my-4 md:my-6 lg:my-8 text-slate-300">
+            Advocacia especializada nas mais diversas áreas do Direito,
+            proporcionando maior segurança jurídica e solução de conflitos de
+            maneira ágil e eficiente.
+          </p>
+
+          <div className="my-4 md:my-6 lg:my-10 flex items-center gap-6">
+            <Link
+              href=""
+              className="flex items-center font-bold gap-2 bg-gradient-to-r from-wine to-wineLight py-4 px-7 rounded-full text-white"
+            >
+              <span>Fale com um Advogado</span>
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-4  "
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                  />
+                </svg>
+              </span>
+            </Link>
+            <Link href="" className="inline-block border-b-2 border-black">
+              Período de Teste
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <FaStar className="text-yellow-500" />
             <div>
-              <p className="inline-block px-3 py-px mb-4 text-xl tracking-wider text-white font-bold uppercase rounded-full">
-                LS Advocacia | Espírito Santo
-              </p>
+              <p className="text font-semibold text-white">Classificação de 5.0 estrelas</p>
+              
             </div>
-            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto">
-              Soluções jurídicas personalizadas para garantir o melhor
-              resultado.
-            </h2>
-            <p className="text-base text-gray-200 md:text-lg">
-              Advocacia especializada nas mais diversas áreas do Direito,
-              proporcionando maior segurança jurídica e solução de conflitos de
-              maneira ágil e eficiente.
-            </p>
-          </div>
-          <div className="flex items-center sm:justify-center">
-            <CustomButton
-              link
-              secondary
-              label="Fale com um advogado"
-              href={contactInfo.whatsappLink}
-            />
           </div>
         </div>
-      </div>
-      <div className="relative px-4 sm:px-0">
-        <div className="absolute inset-0 bg-gray-100 h-1/2" />
-        <div className="relative grid mx-auto overflow-hidden bg-white divide-y rounded shadow sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md">
-          <div className="inline-block p-8 text-center">
-            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
-              <FaBriefcase className="w-10 h-10 text-deep-purple-accent-400" />
-            </div>
-            <p className="font-bold tracking-wide text-gray-800">
-              Consultoria Jurídica
-            </p>
-            <p className="text-gray-600">
-              Assessoria completa para seu negócio ou caso pessoal.
-            </p>
-          </div>
-          <div className="inline-block p-8 text-center">
-            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
-              <FaGavel className="w-10 h-10 text-deep-purple-accent-400" />
-            </div>
-            <p className="font-bold tracking-wide text-gray-800">
-              Litígios e Defesa
-            </p>
-            <p className="text-gray-600">
-              Defesa em processos judiciais e resolução de disputas.
-            </p>
-          </div>
-          <div className="inline-block p-8 text-center">
-            <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50">
-              <FaRegHandshake className="w-10 h-10 text-deep-purple-accent-400" />
-            </div>
-            <p className="font-bold tracking-wide text-gray-800">
-              Acordos e Mediação
-            </p>
-            <p className="text-gray-600">
-              Busca por soluções rápidas e eficientes fora do tribunal.
-            </p>
-          </div>
+        {/* End of Right Content */}
+
+        {/* Left Content */}
+        <div className="w-full md:w-[50%] lg:w-[60%] flex justify-center relative z-20">
+          <img
+            src={heroImage.src}
+            alt=""
+            className=" object-cover rounded-xl w-[450] h-[700]"
+          />
         </div>
+        {/* End of Left Content */}
       </div>
-    </div>
+      {/* End of Left content wrapper */}
+    </section>
   );
 };
 
