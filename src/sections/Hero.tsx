@@ -36,7 +36,7 @@ const Hero = () => {
           <div className="my-4 md:my-6 lg:my-10 flex items-center gap-6">
             <Link
               href=""
-              className="flex items-center font-bold gap-2 bg-gradient-to-r from-wine to-wineLight py-4 px-7 rounded-full text-white"
+              className="flex 2-full items-center font-bold gap-2 bg-gradient-to-r from-wine to-wineLight py-4 px-7 rounded-full text-white"
             >
               <span>Fale com um Advogado</span>
               <span>
@@ -56,16 +56,14 @@ const Hero = () => {
                 </svg>
               </span>
             </Link>
-            <Link href="" className="inline-block border-b-2 border-black">
-              Período de Teste
-            </Link>
           </div>
 
           <div className="flex items-center gap-3">
             <FaStar className="text-yellow-500" />
             <div>
-              <p className="text font-semibold text-white">Classificação de 5.0 estrelas</p>
-              
+              <p className="text font-semibold text-white">
+                Classificação de 5.0 estrelas
+              </p>
             </div>
           </div>
         </div>
